@@ -1,20 +1,67 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      google maps 2
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<!-- 
+  <ion-item>
+    <ion-label position="stacked">
+      Address line 1
+    </ion-label>
+    <ion-input [(ngModel)]="address1" type="text"  [placeholder]="addrStatus === 1 ? 'Street and nr., aprt nr. if needed': '' "></ion-input>
+  </ion-item>
+  <ion-label *ngIf="unvalidAddr1" class="ion-padding"
+    color="danger">
+    Address is required.
+  </ion-label>
+
+  <ion-item>
+    <ion-label position="stacked">
+      Address line 2
+    </ion-label>
+    <ion-input [(ngModel)]="address2" type="text" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">
+      Zip Code
+    </ion-label>
+    <ion-input [(ngModel)]="zip" error-text="Invalid zip" type="number"  [placeholder]="addrStatus === 1 ? 'Only numbers' : ''"></ion-input>
+  </ion-item>
+  <ion-label *ngIf="unvalidZip" class="ion-padding"
+    color="danger">
+    Zip is required. Add a valid zip number
+  </ion-label>
+
+  <ion-item>
+    <ion-label position="stacked">
+      Other instructions for the courier
+    </ion-label>
+    <ion-input [(ngModel)]="extra1" type="text"  [placeholder]="addrStatus === 1 ? 'Please, be as clear as possible' : '' "></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">
+      City
+    </ion-label>
+    <ion-input [(ngModel)]="city" type="text" [placeholder]="addrStatus === 1 ? 'Enter city' : '' "></ion-input>
+  </ion-item>
+  <ion-label *ngIf="unvalidCity" class="ion-padding"
+    color="danger">
+    Please enter a valid city. 
+  </ion-label> -->
+
+
+  <div class="container">
+    <capacitor-google-map #map ></capacitor-google-map>
+
   </div>
+  <ion-button (click)="getLocation()">GET LOCATION</ion-button>
+  <ion-text>The address is {{address}} </ion-text>
 </ion-content>
+
